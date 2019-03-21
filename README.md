@@ -1,5 +1,7 @@
 # flex-helper
 
+Check the demo at <a href="https://flex-helper.herokuapp.com/">https://flex-helper.herokuapp.com/</a>
+
 ## Project setup
 ```
 npm install
