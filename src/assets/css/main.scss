@@ -1,0 +1,64 @@
+$primary: #ff65a3;
+
+/* theme color */
+$--color-primary: $primary;
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-basis: 100%;
+}
+
+#app {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+
+  > div {
+    flex: 1;
+    margin: 30px;
+  }
+}
+
+.flex {
+  &-container {
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  &-element {
+    background: $primary;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+pre {
+  background: #172a5b;
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+}
