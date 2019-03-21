@@ -19,6 +19,14 @@ body {
   flex-basis: 100%;
 }
 
+a {
+  color: $primary;
+
+  &:hover {
+    color: darken($primary, 12%);
+  }
+}
+
 #app {
   display: flex;
   flex: 1;
@@ -49,6 +57,10 @@ body {
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
   }
 }
 

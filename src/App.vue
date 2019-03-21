@@ -2,7 +2,9 @@
   <div id="app">
     <div>
       <div class="flex-container" :style="properties" ref="container">
-        <div v-for="i in count" class="flex-element" :key="i"></div>
+        <div v-for="i in count" class="flex-element" :key="i">
+          <span>{{ i }}</span>
+        </div>
       </div>
     </div>
     <div class="flex-picker">
@@ -13,6 +15,10 @@
           {{ value }}
         </ElRadio>
       </p>
+      <br>
+      <a href="https://github.com/DJanoskova/Vue.JS---FlexHelper" target="_blank">
+        https://github.com/DJanoskova/Vue.JS---FlexHelper
+      </a>
     </div>
   </div>
 </template>
