@@ -6,28 +6,34 @@
       </ElCol>
       <ElCol :sm="24" :lg="12">
         <div class="flex-picker">
-          <p v-for="(option, key) in options" :key="option.name">
-            <strong>{{ option.name }}:</strong>
+          <p v-for="(optionValues, name) in options" :key="name">
+            <strong>{{ name }}:</strong>
             <br>
-            <ElRadio v-model="properties[key]"
+            <ElRadio v-model="properties[name]"
+              v-for="value in optionValues"
               :label="value"
-              v-for="value in option.values"
-              :key="value.name">
+              :key="value">
               {{ value }}
             </ElRadio>
           </p>
           <br>
-          <a href="https://github.com/DJanoskova/Vue.JS---FlexHelper" target="_blank">
-            https://github.com/DJanoskova/Vue.JS---FlexHelper
-          </a>
         </div>
+        <pre>{{ properties }}</pre>
       </ElCol>
     </ElRow>
+
+    <div class="footer">
+      <a href="https://github.com/DJanoskova/Vue.JS---FlexHelper" target="_blank">
+        https://github.com/DJanoskova/Vue.JS---FlexHelper
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
 import { Radio, Row, Col } from 'element-ui';
+
+import { containerOptions } from './const';
 
 import ChildContainer from './components/ChildContainer';
 
@@ -37,24 +43,11 @@ export default {
     return {
       properties: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start'
+        'flex-direction': 'row',
+        'justify-content': 'flex-start',
+        'align-items': 'flex-start'
       },
-      options: {
-        flexDirection: {
-          name: 'flex-direction',
-          values: ['row', 'column']
-        },
-        justifyContent: {
-          name: 'justify-content',
-          values: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly']
-        },
-        alignItems: {
-          name: 'align-items',
-          values: ['flex-start', 'flex-end', 'center', 'baseline', 'stretch']
-        }
-      }
+      options: containerOptions
     }
   },
   components: {

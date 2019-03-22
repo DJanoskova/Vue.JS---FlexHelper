@@ -28,12 +28,11 @@ a {
 }
 
 #app {
-  display: flex;
-  flex: 1;
-  align-items: center;
-
   @media all and (min-width: 1024px) {
     padding: 0 50px;
+    display: flex;
+    flex: 1;
+    align-items: center;
   }
 
   @media all and (max-width: 1024px) {
@@ -93,5 +92,17 @@ hr {
 .sm-mb-20 {
   @media all and (max-width: 1024px) {
     margin-bottom: 20px;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  @media all and (min-width: 1024px) {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    left: 0;
   }
 }
