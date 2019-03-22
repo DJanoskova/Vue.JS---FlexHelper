@@ -1,36 +1,40 @@
 <template>
   <div id="app">
-    <div>
-      <div class="flex-container" :style="properties" ref="container">
-        <div v-for="i in count" class="flex-element" :key="i">
-          <span>{{ i }}</span>
+    <ElRow :gutter="40">
+      <ElCol :sm="24" :lg="12" class="sm-mb-20">
+        <ChildContainer :properties="properties" />
+      </ElCol>
+      <ElCol :sm="24" :lg="12">
+        <div class="flex-picker">
+          <p v-for="(option, key) in options" :key="option.name">
+            <strong>{{ option.name }}:</strong>
+            <br>
+            <ElRadio v-model="properties[key]"
+              :label="value"
+              v-for="value in option.values"
+              :key="value.name">
+              {{ value }}
+            </ElRadio>
+          </p>
+          <br>
+          <a href="https://github.com/DJanoskova/Vue.JS---FlexHelper" target="_blank">
+            https://github.com/DJanoskova/Vue.JS---FlexHelper
+          </a>
         </div>
-      </div>
-    </div>
-    <div class="flex-picker">
-      <p v-for="(option, key) in options" :key="option.name">
-        <strong>{{ option.name }}:</strong>
-        <br>
-        <ElRadio v-model="properties[key]" :label="value" v-for="value in option.values" :key="value.name">
-          {{ value }}
-        </ElRadio>
-      </p>
-      <br>
-      <a href="https://github.com/DJanoskova/Vue.JS---FlexHelper" target="_blank">
-        https://github.com/DJanoskova/Vue.JS---FlexHelper
-      </a>
-    </div>
+      </ElCol>
+    </ElRow>
   </div>
 </template>
 
 <script>
-import { Radio } from 'element-ui';
+import { Radio, Row, Col } from 'element-ui';
+
+import ChildContainer from './components/ChildContainer';
 
 export default {
   name: 'app',
   data() {
     return {
-      count: 4,
       properties: {
         display: 'flex',
         flexDirection: 'row',
@@ -54,7 +58,10 @@ export default {
     }
   },
   components: {
-    ElRadio: Radio
+    ElRadio: Radio,
+    ElRow: Row,
+    ElCol: Col,
+    ChildContainer
   }
 }
 </script>

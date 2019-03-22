@@ -31,13 +31,18 @@ a {
   display: flex;
   flex: 1;
   align-items: center;
-  height: 100%;
-  padding: 0 50px;
 
-  > div {
-    flex: 1;
-    margin: 30px;
+  @media all and (min-width: 1024px) {
+    padding: 0 50px;
   }
+
+  @media all and (max-width: 1024px) {
+    padding: 20px;
+  }
+}
+
+.el-row {
+  width: 100%;
 }
 
 .flex {
@@ -52,16 +57,18 @@ a {
 
   &-element {
     background: $primary;
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #ffffff;
+    margin: 5px;
   }
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {
@@ -73,4 +80,17 @@ pre {
   color: #ffffff;
   padding: 30px;
   border-radius: 10px;
+}
+
+hr {
+  border: none;
+  background: #f3f3f3;
+  height: 1px;
+  border-width: 1px;
+}
+
+.sm-mb-20 {
+  @media all and (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
 }
