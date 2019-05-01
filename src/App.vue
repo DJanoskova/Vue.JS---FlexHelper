@@ -18,7 +18,7 @@
           </p>
           <br>
         </div>
-        <pre>{{ properties }}</pre>
+        <pre>{{ displayedProperties }}</pre>
       </ElCol>
     </ElRow>
 
@@ -48,6 +48,14 @@ export default {
         'align-items': 'flex-start'
       },
       options: containerOptions
+    }
+  },
+  computed: {
+    displayedProperties () {
+      let properties = JSON.stringify(this.properties, null, 2)
+      properties = properties.replace(/"/g, '')
+      properties = properties.replace(/,/g, ';')
+      return properties
     }
   },
   components: {
